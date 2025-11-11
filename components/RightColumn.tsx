@@ -24,7 +24,7 @@ const RightColumn: React.FC<RightColumnProps> = ({ resumeData }) => {
       </Section>
       <Section title="Trabalhos recentes">
         <InstagramFeed posts={resumeData.instagramPosts} />
-      </section>
+      </Section>
     </div>
   );
 };
