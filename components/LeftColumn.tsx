@@ -25,9 +25,12 @@ const LeftColumn: React.FC<LeftColumnProps> = ({ resumeData }) => {
         <Section title="Habilidades">
           <Skills skills={resumeData.skills} />
         </Section>
-        <Section title="Afinidades">
-          <AffinityChart data={resumeData.affinities} />
-        </Section>
+        {/* Seção de Afinidades visível apenas no desktop */}
+        <div className="hidden md:block">
+          <Section title="Afinidades">
+            <AffinityChart data={resumeData.affinities} />
+          </Section>
+        </div>
       </div>
     </div>
   );

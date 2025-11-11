@@ -13,7 +13,7 @@ const Header: React.FC<HeaderProps> = ({ name, title, imageUrl }) => {
         <img
           src={imageUrl}
           alt={name}
-          className="w-32 h-32 rounded-full object-cover shadow-xl mb-6 ring-4 ring-white ring-offset-4 ring-offset-gray-100"
+          className="w-40 h-40 rounded-full object-cover shadow-xl mb-6 ring-4 ring-white ring-offset-4 ring-offset-gray-100"
         />
         <h1 className="text-4xl lg:text-5xl font-black uppercase tracking-tight text-transparent bg-clip-text bg-gradient-to-r from-sky-500 to-blue-600">
           {name}

@@ -12,7 +12,7 @@ interface RightColumnProps {
 
 const RightColumn: React.FC<RightColumnProps> = ({ resumeData }) => {
   return (
-    <div className="space-y-16">
+    <div className="space-y-16 md:pt-1">
       <Section title="Sobre Mim">
         <About text={resumeData.about} />
       </Section>
@@ -24,7 +24,7 @@ const RightColumn: React.FC<RightColumnProps> = ({ resumeData }) => {
       </Section>
       <Section title="Trabalhos recentes">
         <InstagramFeed posts={resumeData.instagramPosts} />
-      </Section>
+      </section>
     </div>
   );
 };

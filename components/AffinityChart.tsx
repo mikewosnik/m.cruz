@@ -6,6 +6,9 @@ interface AffinityChartProps {
 }
 
 const AffinityChart: React.FC<AffinityChartProps> = ({ data }) => {
+  const chartId = React.useId();
+  const gradientId = `data-gradient-${chartId}`;
+
   const size = 260; // Reduced size for sidebar
   const center = size / 2;
   const radius = center - 35; // Leave space for labels
@@ -112,7 +115,7 @@ const AffinityChart: React.FC<AffinityChartProps> = ({ data }) => {
        {/* FIX: The 'maxWidth' prop is not a valid SVG attribute. It has been moved to the 'style' prop. */}
        <svg width="100%" style={{ maxWidth: '400px' }} viewBox={`0 0 ${size} ${size}`}>
         <defs>
-          <radialGradient id="data-gradient" cx="50%" cy="50%" r="50%">
+          <radialGradient id={gradientId} cx="50%" cy="50%" r="50%">
             <stop offset="0%" stopColor="rgba(14, 165, 233, 0.6)" />
             <stop offset="100%" stopColor="rgba(37, 99, 235, 0.5)" />
           </radialGradient>
@@ -120,7 +123,7 @@ const AffinityChart: React.FC<AffinityChartProps> = ({ data }) => {
         <g>
           {gridLevels}
           {spokes}
-          <polygon points={dataPoints} fill="url(#data-gradient)" className="stroke-sky-500 stroke-2" />
+          <polygon points={dataPoints} fill={`url(#${gradientId})`} className="stroke-sky-500 stroke-2" />
           {labels}
         </g>
       </svg>
